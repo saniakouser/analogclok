@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #clockContainer{
+            height: 700px;
+            width: 700px;
+            margin: 20px auto;
+            background: url('/analog/clockkk.jpg');
+            background-size: contain; 
+            background-repeat: no-repeat;
+            
+        }
+        #hour,#minute,#second{
+            position: absolute;
+            background: black;
+            border-radius: 10px;
+        }
+        #hour{
+            width: 0.8%;
+            height: 7.9rem;
+             top: 33.2%;
+             left: 49.65%;
+              background-color: rgb(2, 48, 2);
+            transform-origin:bottom ;
+        }
+        #minute{
+            width: 0.6%;
+            height: 9rem;
+             top: 31.5%;
+             left: 49.65%;
+              background-color: rgb(2, 48, 2);
+              transform-origin:bottom ;
+              
+        }
+        #second{
+            width: 0.4%;
+            height: 9.5rem;
+             top: 30.1%;
+             left: 49.8%;
+              background-color:  rgb(2, 48, 2);
+              transform-origin:bottom ;
+              
+
+              
+        } 
+        img{
+            height: 20px;
+            position: relative;
+            left: 48.6%;
+            top: 48.3%;
+        }
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="clockContainer">
+        <img src="/analog/images (1).jpeg" >
+
+        
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+
+
+
+
+    </div>
+     <script>
+       let hour=document.getElementById('hour');
+        let minute=document.getElementById('minute');
+        let second=document.getElementById('second');
+
+setInterval(()=>{
+   d=new Date();
+ const  htime=d.getHours();
+ const  mtime= d.getMinutes();
+  const stime= d.getSeconds();
+  const hrotation=30*htime+mtime/2;
+  const mrotation=6*mtime;
+  const srotation=6*stime;
+   hour.style.transform=`rotate(${hrotation}deg)`;
+   minute.style.transform=`rotate(${mrotation}deg)`;
+   second.style.transform=`rotate(${srotation}deg)`;},1000);
+   
+    
+// setInterval(() => {
+//     const d = new Date();
+//     const htime = d.getHours();
+//     const mtime = d.getMinutes();
+//     const stime = d.getSeconds();
+//     const hrotation = 30 * htime + mtime / 2;
+//     const mrotation = 6 * mtime;
+//     const srotation = 6 * stime;
+
+//     const hour = document.getElementById("hour");
+//     const minute = document.getElementById("minute");
+//     const second = document.getElementById("second");
+
+//     hour.style.transform = `rotate(${hrotation}deg)`;
+//     minute.style.transform = `rotate(${mrotation}deg)`;
+//     second.style.transform = `rotate(${srotation}deg)`;
+// }, 1000);
+
+
+   
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
